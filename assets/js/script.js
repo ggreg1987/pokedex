@@ -261,6 +261,10 @@ const closeModal = (buttonClose,modal) => {
     })
 }
 
+bodyStyle();
+ulStyle();
+h2();
+ulPokemon();
 
 divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
