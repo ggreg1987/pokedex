@@ -236,6 +236,25 @@ const abilitiesAbout = async (index) => {
     .then((response) => response.map(res => res.ability.name))
 }
 
+const spansContentAbout = async (divContentAbout,index) => {
+    const spanNames = ['height',await heightAbout(index),
+                'weight',await weightAbout(index),'abilities',await abilitiesAbout(index)]
+    for(let i = 0; i < spanNames.length; i++) {
+        const spans = document.createElement('span');
+        
+        spans.style.paddingTop = '10px';
+        spans.style.marginLeft = '10px';
+        if(i % 2 == 0) {
+            spans.innerText = spanNames[i]
+            spans.classList.add(spanNames[i]);
+        } else {
+            spans.innerText = spanNames[i]
+            spans.classList.add(`${spanNames[i-1]}2`);
+        }
+        divContentAbout.appendChild(spans);
+    }
+}
+
 
 divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
