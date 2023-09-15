@@ -40,6 +40,18 @@ const typeDetails = async (index) => {
     .then((response) => response.type.name)
 }
 
+const attackDetails = async (index) => {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${index+1}`)
+    .then((response) => response.json())
+    .then((response) => {
+        if(index < 3 || response.types.length == 2) {
+           return  response.types[1].type.name;
+        } else {
+           return response.types[0].type.name;
+        }
+    })
+}
+
 
 
 section.appendChild(divUl)
