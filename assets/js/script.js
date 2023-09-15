@@ -26,6 +26,14 @@ const liStyle = (li) => {
     li.style.margin = '5px 4px';
 }
 
+const h2 = () => {
+    const h2 = document.createElement('h2');
+    h2.innerText = 'Pokedex';
+    h2.style.color = 'white';
+    divUl.appendChild(h2);
+}
+
+
 
 
 section.appendChild(divUl)
