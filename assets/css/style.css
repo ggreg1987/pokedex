@@ -1,0 +1,77 @@
+.divTypeAndAttack {
+    display: flex;
+    flex-direction: column;
+}
+.nameTypeAttack span {
+    display: flex;
+}
+
+.numberAndImage {
+    display: flex;
+    flex-direction: column;
+}
+
+.numberAndImage div {
+    text-align: right;
+}
+
+.numberAndImage div span {
+    margin-right: 10px;
+}
+.numberAndImage span {
+    color: #000;
+    opacity: 0.5;
+}
+
+.pokeImg {
+    height: 90px;
+    max-width: 100%;
+}
+
+.pokeType {
+    margin-top: 15px;
+}
+
+.pokeType , .pokeAttack , .pokeName {
+    margin-left: 6px;
+}
+
+.pokeType , .pokeAttack {
+    color: #fff;
+    filter: brightness(120%);
+    font-size: 11px;
+    border-radius: 1rem;
+    text-align: center;
+    width: fit-content;
+    padding: 5px;
+    width: 50px;
+    justify-content: center;
+    
+}
+
+.pokeAttack {
+    margin-top: 2px;
+}
+
+.pokemons li {
+    border-radius: 1rem;
+    border: 2px solid #444;
+    box-shadow: -2px -2px 2px #6359f8, 0px -2px 2px 0px #9c32e2, 2px -2px 2px #f36896, 2px 0 2px #ff0b0b, 2px 2px 2px 0px#ff5500, 0 2px 2px 0px #ff9500, -2px 2px 2px 0px #ffb700;
+    animation: rot55 0.7s linear infinite;
+    
+}
+
+span {
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 300px)  {
+    body {
+        width: 300px;
+        margin: 0 auto;
+    }
+   
+    .modal {
+        left: 40%
+    }
+}
