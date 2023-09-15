@@ -222,6 +222,13 @@ const heightAbout = async (index) => {
     })
 }
 
+const weightAbout = async (index) => {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${index+1}`)
+    .then((response) => response.json())
+    .then((response) => response.weight)
+    .then((response) => `${(response * 0.1).toFixed(1)}kg`)
+}
+
 
 divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
