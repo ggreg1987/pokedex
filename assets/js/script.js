@@ -13,6 +13,12 @@ const ulStyle = () => {
     ulStyle.margin = '0';
 }
 
+const bodyStyle = () => {
+    const body = document.getElementsByTagName('body')[0];
+    body.style.boxSizing = 'border-box';
+    body.style.backgroundColor = 'black';
+}
+
 
 section.appendChild(divUl)
 mainn.appendChild(section)
