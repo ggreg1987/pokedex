@@ -19,6 +19,14 @@ const bodyStyle = () => {
     body.style.backgroundColor = 'black';
 }
 
+const liStyle = (li) => {
+    li.style.display = 'flex';
+    li.style.justifyContent = 'space-between';
+    li.style.color = 'white';
+    li.style.margin = '5px 4px';
+}
+
+
 
 section.appendChild(divUl)
 mainn.appendChild(section)
