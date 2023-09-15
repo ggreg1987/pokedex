@@ -229,6 +229,13 @@ const weightAbout = async (index) => {
     .then((response) => `${(response * 0.1).toFixed(1)}kg`)
 }
 
+const abilitiesAbout = async (index) => {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${index+1}`)
+    .then((response) => response.json())
+    .then((response) => response.abilities)
+    .then((response) => response.map(res => res.ability.name))
+}
+
 
 divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
