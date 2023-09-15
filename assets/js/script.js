@@ -52,6 +52,31 @@ const attackDetails = async (index) => {
     })
 }
 
+const spans = async (pokemons,index,li,ulPokemons) => {
+    const divNameTypeAttack = document.createElement('div');
+    const divTypeAndAttack = document.createElement('div');
+    divTypeAndAttack.className = 'divTypeAndAttack'
+    divNameTypeAttack.className = 'nameTypeAttack';
+    const name = document.createElement('span');
+    const pokeType = document.createElement('span');
+    const attackType = document.createElement('span');
+    name.innerText = `${pokemons[index].name}`;
+    pokeType.innerText = `${await typeDetails(index)}`;
+    li.className = `${await typeDetails(index)}`;
+    attackType.innerText =  `${await attackDetails(index)}`;
+    pokeType.className = 'pokeType';
+    attackType.className = 'pokeAttack'
+    pokeType.classList.add(`${await typeDetails(index)}`)
+    attackType.classList.add(`${await attackDetails(index)}`)
+    name.className = 'pokeName'
+    divNameTypeAttack.appendChild(name);
+    divTypeAndAttack.appendChild(pokeType)
+    divTypeAndAttack.appendChild(attackType)
+    divNameTypeAttack.appendChild(divTypeAndAttack)
+    li.appendChild(divNameTypeAttack);
+    ulPokemons.appendChild(li);
+}
+
 
 
 section.appendChild(divUl)
