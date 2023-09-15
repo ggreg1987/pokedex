@@ -5,3 +5,4 @@ const ulPokemons = document.createElement('ul');
 
 
 section.appendChild(divUl)
+mainn.appendChild(section)
