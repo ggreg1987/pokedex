@@ -77,6 +77,32 @@ const spans = async (pokemons,index,li,ulPokemons) => {
     ulPokemons.appendChild(li);
 }
 
+const numberAndImage = (index,li,img,ulPokemons) => {
+    const divNumberAndPoke = document.createElement('div');
+    const divNumber = document.createElement('div')
+    const divImage = document.createElement('div');
+    divNumberAndPoke.className = 'numberAndImage';
+    img.className = 'pokeImg';
+    const number = document.createElement('span');
+
+    if(index < 9) {
+        number.innerText = `#00${index+1}`;
+    } else if(index >= 9 && index < 99) {
+        number.innerText = `#0${index+1}`;
+    } else {
+        number.innerText = `#${index+1}`;
+    }
+    
+    divNumber.appendChild(number);
+    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index+1}.svg`;
+    
+    divNumberAndPoke.appendChild(divNumber);
+    divImage.append(img)
+    divNumberAndPoke.appendChild(img);
+    li.appendChild(divNumberAndPoke);
+    ulPokemons.appendChild(li);
+}
+
 
 
 section.appendChild(divUl)
