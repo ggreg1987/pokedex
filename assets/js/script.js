@@ -209,6 +209,19 @@ const contentModal = async (img2,index,modalWindow,pokemons) => {
     modalWindow.appendChild(divAbout);    
 }
 
+const heightAbout = async (index) => {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${index+1}`)
+    .then((response) => response.json())
+    .then((response) => response.height)
+    .then((response) => {
+        if(response < 10) {
+            return `${response * 10}cm`
+        } else {
+            return `${(response  * 0.1).toFixed(2)}m`
+        }
+    })
+}
+
 
 divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
