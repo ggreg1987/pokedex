@@ -255,6 +255,12 @@ const spansContentAbout = async (divContentAbout,index) => {
     }
 }
 
+const closeModal = (buttonClose,modal) => {
+    buttonClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+    })
+}
+
 
 divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
