@@ -122,6 +122,27 @@ const ulPokemon = async () => {
 
 //---------------------------------Modal------------------------------------
 
+const openModal =  (li,img2,index,pokemons) => {
+    const modal = document.createElement('div');
+    const modalWindow = document.createElement('div');
+    const buttonClose = document.createElement('button');
+    const divButton = document.createElement('div');
+    modal.className = 'modal'
+    modalWindow.className = 'modalWindow';
+    buttonClose.className = 'buttonClose'
+    divButton.className = 'divButton'
+    buttonClose.innerText = 'X';
+    li.addEventListener('click', async () => {
+        modal.style.display = 'flex';     
+        openModal(li,modal);
+        closeModal(buttonClose,modal)
+        divButton.appendChild(buttonClose);
+        modalWindow.appendChild(divButton);
+        contentModal(img2,index,modalWindow,pokemons)
+        modal.appendChild(modalWindow);
+        divUl.appendChild(modal)
+    })
+}
 
 divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
