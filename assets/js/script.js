@@ -120,6 +120,8 @@ const ulPokemon = async () => {
     });
 }
 
+//---------------------------------Modal------------------------------------
+
 
 divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
