@@ -33,6 +33,12 @@ const h2 = () => {
     divUl.appendChild(h2);
 }
 
+const typeDetails = async (index) => {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${index+1}`)
+    .then((response) => response.json())
+    .then((response) => response.types[0])
+    .then((response) => response.type.name)
+}
 
 
 
