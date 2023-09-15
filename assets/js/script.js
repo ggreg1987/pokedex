@@ -103,6 +103,23 @@ const numberAndImage = (index,li,img,ulPokemons) => {
     ulPokemons.appendChild(li);
 }
 
+const ulPokemon = async () => {    
+    fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150')
+    .then((response) => response.json())
+    .then((response) => response.results)
+    .then(async (pokemons)  => {
+        for (let index = 0; index < pokemons.length; index++) {            
+            const li = document.createElement('li');
+            const img = document.createElement('img'); 
+            const img2 = document.createElement('img');
+            liStyle(li);
+            await spans(pokemons,index,li,ulPokemons)
+            numberAndImage(index,li,img,ulPokemons);    
+            openModal(li,img2,index,pokemons)  
+        }   
+    });
+}
+
 
 
 section.appendChild(divUl)
