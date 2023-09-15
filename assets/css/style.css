@@ -1,3 +1,7 @@
+body {
+    background-image: url("../images/pokemon.jpg");
+}
+
 .divTypeAndAttack {
     display: flex;
     flex-direction: column;
@@ -75,3 +79,4 @@ span {
         left: 40%
     }
 }
+

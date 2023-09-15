@@ -270,3 +270,7 @@ divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
 mainn.appendChild(section)
 document.body.appendChild(mainn)
+
+
+
+

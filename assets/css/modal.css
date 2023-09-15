@@ -1,11 +1,6 @@
-body {
-    background-image: url("../images/pokemon.jpg");
-}
-
 .modal {
     width: 220px;
     top: 0;
-
     display: none;
     align-items: center;
     justify-content: center;
