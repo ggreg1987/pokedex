@@ -144,6 +144,72 @@ const openModal =  (li,img2,index,pokemons) => {
     })
 }
 
+const contentModal = async (img2,index,modalWindow,pokemons) => {
+    const divContent = document.createElement('div')   
+    const divAbout = document.createElement('div');
+    const divSpanAbout = document.createElement('div')
+    divSpanAbout.className = 'divSpanAbout'
+    const spanAbout = document.createElement('span')
+    divAbout.className = 'divAbout'
+    const divContentAbout = document.createElement('div');
+    divContentAbout.className = 'divContentAbout';
+    const name = document.createElement('span')
+    const number = document.createElement('span');
+    number.className = 'numberModal'
+    const divImage = document.createElement('div');
+    const divNameAndNumber = document.createElement('div');
+    divNameAndNumber.className = 'nameAndNumber';
+    const divTypeAndAttack = document.createElement('div');
+    divTypeAndAttack.className = 'divTypeAndAttack2';
+    const type = document.createElement('span');
+    const attack = document.createElement('span');
+    attack.className = 'attack'
+    type.className = 'type'
+    type.classList.add(`${await typeDetails(index)}`);
+    attack.classList.add(`${await attackDetails(index)}`);
+    if(index < 9) {
+        number.innerText = `#00${index+1}`;
+    } else if(index >= 9 && index < 99) {
+        number.innerText = `#0${index+1}`;
+    } else {
+        number.innerText = `#${index+1}`;
+    }
+
+    number.style.marginRight = '10px'
+    name.style.color = '#fff'
+    name.innerText = `${pokemons[index].name}`;
+    name.style.marginLeft = '10px'
+    type.innerText = `${await typeDetails(index)}`;
+    type.style.marginLeft = '10px'
+    attack.innerText = `${await attackDetails(index)}`;
+    attack.style.marginLeft = '10px'
+    divContent.className = `${await typeDetails(index)}`;
+    divContent.classList.add('divContent')
+
+    spanAbout.innerText = 'about'
+    spanAbout.style.marginLeft = '10px'
+
+    divNameAndNumber.appendChild(name)
+    divNameAndNumber.appendChild(number);
+    divTypeAndAttack.appendChild(type);
+    divTypeAndAttack.appendChild(attack);
+        
+    divImage.className = 'divImage'
+    img2.className = 'imageModal';
+    img2.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index+1}.svg`;
+    divImage.appendChild(img2);
+    divContent.appendChild(divNameAndNumber);
+    divContent.appendChild(divTypeAndAttack);
+    divContent.appendChild(divImage);
+    divSpanAbout.appendChild(spanAbout)
+    divAbout.appendChild(divSpanAbout);
+    spansContentAbout(divContentAbout,index);
+    divAbout.appendChild(divContentAbout)
+    modalWindow.appendChild(divContent)
+    modalWindow.appendChild(divAbout);    
+}
+
+
 divUl.appendChild(ulPokemons)
 section.appendChild(divUl)
 mainn.appendChild(section)
